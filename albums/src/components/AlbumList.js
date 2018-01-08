@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 //create the albumList component using functional style component
 // const AlbumList = () => {
@@ -12,6 +13,7 @@ import axios from 'axios';
 // };
 
 //refactor the above to make a Class style component - needed to make ajax call 
+let albumTitles;
 
 class AlbumList extends Component {
     //initial state
@@ -19,6 +21,7 @@ class AlbumList extends Component {
         albums: []
 
     };
+
     //ensures that this method will execute when this compoenent will be rendered to screen
     //sort of like an initialization method 
     componentWillMount() {
@@ -27,18 +30,22 @@ class AlbumList extends Component {
         //returns a promise
         axios.get('https://rallycoding.herokuapp.com/api/music_albums')
             .then(
-                response => this.setState({ albums: response.data })
+            response => this.setState({ albums: response.data })
             );
         //setState is given to us by Component and is availble to all class style components
         //and is the only way to update a component's state
     }
 
-    render() {
-        console.log(this.state);
+    renderAlbums() {
+        albumTitles = this.state.albums.map(album =>
+            <AlbumDetail key={album.title} album={album} />);
+        return albumTitles;
+    }
 
+    render() {
         return (
             <View>
-                <Text>Album List</Text>
+                {this.renderAlbums()}
             </View>
         );
     }
