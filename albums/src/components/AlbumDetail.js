@@ -39,7 +39,7 @@ const AlbumDetail = ({ album }) => {
     );
 };
 
-let win = Dimensions.get('window');
+const win = Dimensions.get('window');
 
 const styles = {
     headerContenStyle: {
