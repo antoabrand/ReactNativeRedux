@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Image, Dimensions } from 'react-native';
 import Card from './Card';
 import CardItem from './CardItem';
+import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
     const { title, artist, thumbnail_image, image } = album;
@@ -33,6 +34,10 @@ const AlbumDetail = ({ album }) => {
                         source={{ uri: image }} 
                     />
                 </View>
+            </CardItem>
+
+            <CardItem>
+                <Button />
             </CardItem>
         </Card>
 
