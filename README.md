@@ -11,4 +11,3 @@ React Native with Redux - Practice project for learning React Native
     For layouts - 
         Flex box layout mechanism - used to layout multpiple items within a container
 
-        Checking stuff
