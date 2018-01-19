@@ -7,7 +7,7 @@ import React from 'react';
 const App = () => (
 
     <View>
-        <Header text={'Auth'}/>
+       <Text></Text>
     </View>
 
 );
