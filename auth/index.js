@@ -1,17 +1,5 @@
-import { AppRegistry, View } from 'react-native';
-import Header from './src/app/components/Header';
+import { AppRegistry, View, Text } from 'react-native';
 import React from 'react';
-
-
-
-const App = () => (
-
-    <View>
-       <Text></Text>
-    </View>
-
-);
-
-
+import App from './src/components/App';
 
 AppRegistry.registerComponent('auth', () => App);
