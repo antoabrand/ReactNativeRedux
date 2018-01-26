@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ListItem from "./ListItem";
 
 class LibraryList extends Component {
+  //componentWill
   componentWillMount() {
     const ds = new ListView.DataSource({
       rowHasChanged: () => (r1, r2) => r1 != r2,

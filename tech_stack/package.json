@@ -21,8 +21,12 @@
   "jest": {
     "preset": "react-native"
   },
-  "scripts": {
-    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\""
+  "lint-staged": {
+    "*.js": ["npm run pretty", "git add"]
   },
-  "pre-commit": ["pretty"]
+  "scripts": {
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\"",
+    "lint-staged": "lint-staged"
+  },
+  "pre-commit": ["pretty", "lint-staged"]
 }
