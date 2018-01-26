@@ -3,13 +3,13 @@ import { Alert } from "react-native";
 import { connect } from "react-redux";
 
 class LibraryList extends Component {
-    render() {
-        return true;
-    }
+  render() {
+    return true;
+  }
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+  console.log(state);
 };
 
 export default connect(mapStateToProps)(LibraryList);

@@ -7,17 +7,16 @@ import { Header } from "./components/common";
 import LibraryList from "./components/LibraryList";
 
 class App extends Component {
-    render() {
-        return (
-            <Provider store={createStore(reducers)}>
-                <ScrollView>
-                    <Header headerText="Tech Stack" />
-                    <LibraryList />
-                </ScrollView>
-            </Provider>
-        );
-    }
+  render() {
+    return (
+      <Provider store={createStore(reducers)}>
+        <ScrollView>
+          <Header headerText="Tech Stack" />
+          <LibraryList />
+        </ScrollView>
+      </Provider>
+    );
+  }
 }
-
 
 export default App;
