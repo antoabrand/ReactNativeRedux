@@ -27,11 +27,6 @@
     "preset": "react-native"
   },
   "scripts": {
-    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\"",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": ["npm run pretty", "git add"]
-  },
-  "pre-commit" : "npm run pretty"
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\""
+  }
 }
