@@ -11,6 +11,9 @@ class App extends Component {
     return (
       <Provider store={createStore(reducers)}>
         <View>
+         
+         
+         
           <Header headerText="Tech Stack" />
           <LibraryList />
         </View>
