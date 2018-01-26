@@ -29,11 +29,9 @@
   "scripts": {
     "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\"",
     "precommit": "lint-staged"
-},
-"lint-staged": {
-    "*.js": [
-        "npm run pretty",
-        "git add"
-    ]
-}
+  },
+  "lint-staged": {
+    "*.js": ["npm run pretty", "git add"]
+  },
+  "pre-commit" : "lint-staged"
 }

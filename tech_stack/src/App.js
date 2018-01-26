@@ -10,10 +10,8 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>  
-                
-             
-              <Header headerText="Tech Stack" />
+        <View>
+          <Header headerText="Tech Stack" />
           <LibraryList />
         </View>
       </Provider>
