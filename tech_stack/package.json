@@ -33,5 +33,5 @@
   "lint-staged": {
     "*.js": ["npm run pretty", "git add"]
   },
-  "pre-commit" : "lint-staged"
+  "pre-commit" : "npm run pretty"
 }
