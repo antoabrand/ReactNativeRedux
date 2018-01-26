@@ -28,7 +28,7 @@
   },
   "scripts": {
     "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\"",
-    "precommit": "lint-staged && npm test"
+    "precommit": "lint-staged"
 },
 "lint-staged": {
     "*.js": [
