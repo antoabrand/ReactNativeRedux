@@ -11,6 +11,11 @@
   "devDependencies": {
     "babel-jest": "22.1.0",
     "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.0",
     "husky": "^0.14.3",
     "jest": "22.1.4",
     "lint-staged": "^6.1.0",
@@ -22,11 +27,16 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "*.js": ["npm run pretty", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "scripts": {
     "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\"",
     "lint-staged": "lint-staged"
   },
-  "pre-commit": ["pretty", "lint-staged"]
+  "pre-commit": [
+    "pretty"
+  ]
 }
