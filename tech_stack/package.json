@@ -28,9 +28,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "npm run pretty",
       "git add",
-      "npm run pretty"
     ]
   },
   "scripts": {
