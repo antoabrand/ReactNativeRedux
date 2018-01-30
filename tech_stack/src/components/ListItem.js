@@ -1,16 +1,26 @@
 import React, { Component } from "react";
-import { Text, TouchableWithoutFeedback, View } from "react-native";
+import {
+  Text,
+  TouchableWithoutFeedback,
+  View,
+  LayoutAnimation,
+} from "react-native";
 import { connect } from "react-redux";
 import { CardSection } from "./common";
 import * as actions from "../actions";
 
 class ListItem extends Component {
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
+  }
+
   showExpanded() {
-    if (this.props.item.id === this.props.selectedLibraryId) {
+    const { item } = this.props;
+    if (this.props.expanded) {
       console.log("inside ShowExpanded");
       return (
         <CardSection>
-          <Text style={styles.titleStyle}>{this.props.item.description}</Text>
+          <Text style={styles.cardStyle}>{item.description}</Text>
         </CardSection>
       );
     }
@@ -29,8 +39,8 @@ class ListItem extends Component {
         <View>
           <CardSection>
             <Text style={titleStyle}>{title}</Text>
-            {this.showExpanded()}
           </CardSection>
+          {this.showExpanded()}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -39,14 +49,23 @@ class ListItem extends Component {
 
 const styles = {
   titleStyle: {
-    fontSize: 18,
+    fontSize: 20,
     paddingLeft: 15,
+    fontWeight: "bold",
   },
-  cardStyle: {},
+  cardStyle: {
+    fontSize: 16,
+    flex: 4,
+    justifyContent: "center",
+    paddingLeft: 15,
+    paddingRight: 15,
+    backgroundColor: "#fff8dc",
+  },
 };
 
-const mapStateToProps = state => {
-  return { selectedLibraryId: state.selectedLibraryId };
+const mapStateToProps = (state, ownProps) => {
+  const expanded = state.selectedLibraryId === ownProps.item.id;
+  return { expanded };
 };
 
 //first argument of connect is for mapStateToProprs
