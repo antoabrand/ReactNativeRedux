@@ -1,8 +1,8 @@
 //location for all the different action creators for my app
 
-export const selectLibrary = libraryId => {
+export const selectLibrary = id => {
   return {
     type: "select_library",
-    payload: "libraryId",
+    payload: id,
   };
 };
