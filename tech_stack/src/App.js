@@ -9,6 +9,7 @@ import LibraryList from "./components/LibraryList";
 class App extends Component {
   render() {
     return (
+      //Provider tag - facilitates communication between react and redux
       <Provider store={createStore(reducers)}>
         <View style={{ flex: 1 }}>
           <Header headerText="Tech Stack" />

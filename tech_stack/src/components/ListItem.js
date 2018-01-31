@@ -14,6 +14,7 @@ class ListItem extends Component {
     LayoutAnimation.easeInEaseOut();
   }
 
+  //if the item selected is the same as the item id then we return some jsx to render to screen
   showExpanded() {
     const { item } = this.props;
     if (this.props.expanded) {
@@ -63,12 +64,14 @@ const styles = {
   },
 };
 
+//this func gives us ability to interface between app level state to component level - get state properties and inject to component props using connect func at bottom
+//when state changes - this func will rerun and pass in a new set of props from component and causes component to rerender
 const mapStateToProps = (state, ownProps) => {
   const expanded = state.selectedLibraryId === ownProps.item.id;
   return { expanded };
 };
 
-//first argument of connect is for mapStateToProprs
+//first argument of connect is for mapStateToProps
 //since we don't need mapStateToProps we are going to pass null as the first argument
 //the second argument will be to wire the actions object to listItem component as props
 //in order for it to have access to those actions - placing actions as the second argument
