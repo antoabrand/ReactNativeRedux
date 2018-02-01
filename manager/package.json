@@ -8,6 +8,7 @@
     "pretty": "prettier --write --tab-width 2 \"src/**/*.js\" \"*.json\""
   },
   "dependencies": {
+    "firebase": "^4.9.0",
     "prettier": "^1.10.2",
     "react": "16.2.0",
     "react-native": "0.52.2",
