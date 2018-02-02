@@ -24,16 +24,14 @@ export const passwordChanged = text => {
 
 export const loginUser = ({ email, password }) => {
   return dispatch => {
-    firebase.auth().signInWithEmailAndPassword(email.toString().toLowerCase().trim(),password)
-      .then(user => successfullyLoggedIn(dispatch, user))
-        .catch(() => {
-          firebase.auth().createUserWithEmailAndPassword(email.toString().toLowerCase().trim(),password).then(user => successfullyLoggedIn(dispatch, user));
-      });
+    firebase.auth().signInWithEmailAndPassword(email.toString().trim(), password).then(user => successfullyLoggedIn(dispatch, user))
+      .catch(() => firebase.auth().createUserWithEmailAndPassword(email.toString().trim(), password)).then(user => successfullyLoggedIn(dispatch,user));
   };
+};
 
 //helper funcs
 
-const failedLogin = (dispatch) => {
+const failedLogin = dispatch => {
   dispatch({
     type: LOGIN_USER_FAILED,
     payload: "failed to login"
