@@ -24,8 +24,16 @@ export const passwordChanged = text => {
 
 export const loginUser = ({ email, password }) => {
   return dispatch => {
-    firebase.auth().signInWithEmailAndPassword(email.toString().trim(), password).then(user => successfullyLoggedIn(dispatch, user))
-      .catch(() => firebase.auth().createUserWithEmailAndPassword(email.toString().trim(), password)).then(user => successfullyLoggedIn(dispatch,user));
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email.toString().trim(), password)
+      .then(user => successfullyLoggedIn(dispatch, user))
+      .catch(() =>
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(email.toString().trim(), password)
+      )
+      .then(user => successfullyLoggedIn(dispatch, user));
   };
 };
 
