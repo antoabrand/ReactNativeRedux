@@ -3,16 +3,6 @@ import { View } from "react-native";
 import axios from "axios";
 import AlbumDetail from "./AlbumDetail";
 
-//create the albumList component using functional style component
-// const AlbumList = () => {
-//     return (
-//         <View>
-//             <Text>Album List</Text>
-//     </View>
-//     );
-// };
-
-//refactor the above to make a Class style component - needed to make ajax call
 let albumTitles;
 
 class AlbumList extends Component {
@@ -21,8 +11,7 @@ class AlbumList extends Component {
     albums: []
   };
 
-  //ensures that this method will execute when this compoenent will be rendered to screen
-  //sort of like an initialization method
+  //componentWillMount <lifecycle method> will execute when this component is rendered 
   componentWillMount() {
     console.log("componentWillMount in AlbumList");
 
@@ -45,7 +34,5 @@ class AlbumList extends Component {
     return <View>{this.renderAlbums()}</View>;
   }
 }
-
-//make ajax call to get details to create a list of albums
 
 export default AlbumList;
