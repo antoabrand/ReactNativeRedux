@@ -11,9 +11,9 @@ const App = () => (
     <AlbumList />
   </ScrollView>
 
-  // <Text></Text>
+  // <Text>"Some Text"</Text>
 
-  //jsx - follows symantics of html
+  //jsx - follows syntax of html
   //syntactic sugar for react method calls
   //under the hood does this:
   /** 

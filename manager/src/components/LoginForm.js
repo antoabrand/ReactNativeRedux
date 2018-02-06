@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { View, Text } from "react-native";
 
 class LoginForm extends Component {
+  
   onEmailChange(text) {
     this.props.emailChanged(text);
   }

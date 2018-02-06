@@ -45,7 +45,7 @@ const styles = {
   headerContenStyle: {
     flexDirection: "column",
     justifyContent: "space-around",
-    marginLeft: 10
+    marginLeft: 10,
   },
   headerTextStyle: {
     fontSize: 18,
