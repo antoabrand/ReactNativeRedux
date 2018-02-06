@@ -30,15 +30,10 @@ class App extends Component {
         return (
             //createStore must have a function argument passed - even if that function only returns an empty array so that it won't throw an error
             <Provider store={store}>
-                {/* <Header headerText={"Login"} /> */}
-                {/* Here we will let Router handle the header since it contains one by default */}
-
-                {/* Here we will let router decide what we will show and not show LoginForm by default */}
-                {/* <LoginForm /> */}
+                {/* Here we will let Router handle the header and what to display */}
                 <Router />
             </Provider>
         );
-        console.log("Hi" + store.getState());
     }
 }
 
