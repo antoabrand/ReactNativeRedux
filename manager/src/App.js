@@ -22,7 +22,6 @@ class App extends Component {
     firebase.initializeApp(config);
   }
 
-  
   render() {
     //2nd argument {} argument is used to pass any initial state we might want to pass to the redux app
     //3rd argument is for enhancers

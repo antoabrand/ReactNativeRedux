@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import { Card, CardSection, Input, Button } from "./common";
+import { Card, CardSection, Input, Button, Spinner } from "./common";
 import {
   emailChanged,
   passwordChanged,
   loginUser,
-  loginUserFail
+  loginUserFail,
 } from "../actions";
 import { connect } from "react-redux";
 import { View, Text } from "react-native";
 
+const {emailChanged} = this.props; 
+
 class LoginForm extends Component {
-  
   onEmailChange(text) {
     this.props.emailChanged(text);
   }
@@ -22,6 +23,14 @@ class LoginForm extends Component {
   onLoginPress() {
     const { email, password } = this.props;
     this.props.loginUser({ email, password });
+  }
+
+  renderButton() {
+    if (this.props.loadingSpinner === true) {
+      <Spinner />;
+    } else {
+      return <Button onPress={this.onLoginPress.bind(this)}>Login</Button>;
+    }
   }
 
   renderError() {
@@ -56,9 +65,7 @@ class LoginForm extends Component {
 
         {this.renderError()}
 
-        <CardSection>
-          <Button onPress={this.onLoginPress.bind(this)}>Login</Button>
-        </CardSection>
+        <CardSection>{this.renderButton()}</CardSection>
       </Card>
     );
   }
@@ -73,11 +80,12 @@ const styles = {
 };
 //this is the func that will return props from state and pass them to your component
 const mapStateToProps = state => {
-  const { email, password, error } = state.auth;
+  const { email, password, error, loadingSpinner } = state.auth;
   return {
-    email: email,
-    password: password,
-    error: error
+    email,
+    password,
+    error,
+    loadingSpinner
   };
 };
 
@@ -85,5 +93,5 @@ export default connect(mapStateToProps, {
   emailChanged,
   passwordChanged,
   loginUser,
-  loginUserFail
+  loginUserFail,
 })(LoginForm);

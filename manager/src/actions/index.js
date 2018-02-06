@@ -5,7 +5,7 @@ import {
   PASSWORD_CHANGED,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL,
-  LOGIN_USER
+  LOGIN__ATTEMPT
 } from "./actionConsts";
 
 export const emailChanged = text => {
@@ -24,7 +24,7 @@ export const passwordChanged = text => {
 
 export const loginUser = ({ email, password }) => {
   return dispatch => {
-    dispatch({ type: LOGIN_USER });
+    dispatch({ type: LOGIN_ATTEMPT });
 
     firebase
       .auth()
