@@ -9,6 +9,8 @@ import {
     LOGIN_ATTEMPT
 } from "./actionConsts";
 
+//each of these are actions exported - used in mapStateToProps func as arguments to allow component to call
+
 export const emailChanged = text => {
     return {
         type: EMAIL_CHANGED,
@@ -23,6 +25,7 @@ export const passwordChanged = text => {
     };
 };
 
+//redux thunk - or an asynchronous call - only dispatches action when we tell it to instead of automatically like every other action
 export const loginUser = ({ email, password }) => {
     return dispatch => {
         dispatch({ type: LOGIN_ATTEMPT });
@@ -52,5 +55,6 @@ const loginUserSuccess = (dispatch, user) => {
         type: LOGIN_USER,
         payload: user
     });
-    Actions.employeeList();
+    //call the key of the scene you want to navigate to
+    Actions.main();
 };

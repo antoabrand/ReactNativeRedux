@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { View, Text } from "react-native";
 
 class LoginForm extends Component {
+    //helper methods
     onEmailChange(text) {
         this.props.emailChanged(text);
     }
@@ -42,6 +43,8 @@ class LoginForm extends Component {
             );
         }
     }
+
+    //rendering jsx
     render() {
         return (
             <Card>
@@ -53,6 +56,7 @@ class LoginForm extends Component {
                         value={this.props.email}
                     />
                 </CardSection>
+
                 <CardSection>
                     <Input
                         secureTextEntry
