@@ -7,7 +7,7 @@ import {
 } from "../actions/actionConsts";
 import LoginForm from "../components/LoginForm";
 
-//optional - create an initial state to pass to our reducer
+//optional - create an initial state to pass to our reducer 
 const INITIAL_STATE = {
     email: "",
     password: "",
@@ -20,48 +20,20 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case EMAIL_CHANGED:
             //update and return state  -- below - create new obj, take everything in state and put in new obj, define prop in new obj and place it ontop of state obj and return that new obj
-            console.log(
-                "Action.Type: " +
-                    action.type +
-                    " " +
-                    "Action.Payload: " +
-                    " " +
-                    action.payload
-            );
+            console.log("Action.Type: " + action.type +" " +"Action.Payload: " +" " +action.payload);
             return { ...state, email: action.payload };
         case PASSWORD_CHANGED:
-            console.log(
-                "Action.Type: " +
-                    action.type +
-                    " " +
-                    "Action.Payload: " +
-                    " " +
-                    action.payload
-            );
+        console.log("Action.Type: " + action.type +" " +"Action.Payload: " +" " +action.payload);
             return { ...state, password: action.payload };
         case LOGIN_USER:
-            console.log(
-                "Action.Type: " +
-                    action.type +
-                    " " +
-                    "Action.Payload: " +
-                    " " +
-                    action.payload
-            );
+        console.log("Action.Type: " + action.type +" " +"Action.Payload: " +" " +action.payload);
             return {
                 ...state,
                 ...INITIAL_STATE,
                 user: action.payload
             };
         case LOGIN_USER_FAIL:
-            console.log(
-                "Action.Type: " +
-                    action.type +
-                    " " +
-                    "Action.Payload: " +
-                    " " +
-                    action.payload
-            );
+        console.log("Action.Type: " + action.type +" " +"Action.Payload: " +" " +action.payload);
             return {
                 ...state,
                 error: "Authentication failed",
@@ -69,24 +41,10 @@ export default (state = INITIAL_STATE, action) => {
                 loadingSpinner: false
             };
         case LOGIN_ATTEMPT:
-            console.log(
-                "Action.Type: " +
-                    action.type +
-                    " " +
-                    "Action.Payload: " +
-                    " " +
-                    action.payload
-            );
+        console.log("Action.Type: " + action.type +" " +"Action.Payload: " +" " +action.payload);
             return { ...state, error: null, loadingSpinner: true };
         default:
-            console.log(
-                "Action.Type: " +
-                    action.type +
-                    " " +
-                    "Action.Payload: " +
-                    " " +
-                    action.payload
-            );
+        console.log("Action.Type: " + action.type +" " +"Action.Payload: " +" " +action.payload);
             return state;
     }
 };
