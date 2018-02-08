@@ -1,8 +1,8 @@
 import React from "react";
-import { Scene, Router } from "react-native-router-flux";
+import { Scene, Router, Actions } from "react-native-router-flux";
 import LoginForm from "./components/LoginForm";
 import EmployeeList from "./components/EmployeeList";
-import EmployeeDetail from "./components/EmployeeDetail";
+import EmployeeCreate from "./components/EmployeeCreate";
 import { View } from "react-native";
 
 //this is how we implement routing using react-native-router-flux
@@ -27,15 +27,15 @@ const RouterComponent = () => {
                     <Scene
                         key="employeeList"
                         rightTitle="Add"
-                        onRight={() => console.log("clicked Add Employee")}
+                        onRight={() => Actions.employeeCreate()}
                         component={EmployeeList}
                         title="Employees"
-                        // renderLeftButton={<View />}
+                        intitial
                     />
                     <Scene
-                        key="employeeDetail"
-                        component={EmployeeDetail}
-                        title="Employee Detail"
+                        key="employeeCreate"
+                        component={EmployeeCreate}
+                        title="Create Employee"
                     />
                 </Scene>
             </Scene>
