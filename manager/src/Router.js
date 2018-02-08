@@ -25,8 +25,9 @@ const RouterComponent = () => {
                 </Scene>
                 <Scene key="main">
                     <Scene
-                        key="employeeList" rightTitle="Add"
-                        onRight={()=> console.log("clicked Add Employee") }
+                        key="employeeList"
+                        rightTitle="Add"
+                        onRight={() => console.log("clicked Add Employee")}
                         component={EmployeeList}
                         title="Employees"
                         // renderLeftButton={<View />}
