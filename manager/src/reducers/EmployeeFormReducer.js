@@ -1,4 +1,4 @@
-import { Employee_Update, EMPLOYEE_UPDATE } from "../actions/actionConsts";
+import { EMPLOYEE_UPDATE } from "../actions/ActionConsts";
 
 const INITIAL_STATE = {
   name: "",

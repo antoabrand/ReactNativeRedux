@@ -7,7 +7,7 @@ import {
   LOGIN_USER,
   LOGIN_USER_FAIL,
   LOGIN_ATTEMPT
-} from "./actionConsts";
+} from "./ActionConsts";
 
 //each of these are actions exported - used in mapStateToProps func as arguments to allow component to call
 

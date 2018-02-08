@@ -4,7 +4,7 @@ import {
   LOGIN_USER,
   LOGIN_USER_FAIL,
   LOGIN_ATTEMPT
-} from "../actions/actionConsts";
+} from "../actions/ActionConsts";
 import LoginForm from "../components/LoginForm";
 
 //optional - create an initial state to pass to our reducer

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Card, CardSection, Input, Button, Spinner } from "./common";
-import { employeeUpdate } from "./reducers";
+import { employeeUpdate } from "../reducers";
 
 class EmployeeCreate extends Component {
   render() {
@@ -12,7 +12,9 @@ class EmployeeCreate extends Component {
             label="Name"
             placeholder="Jane"
             value={this.props.name}
-            onChangeText={text => this.props.employeeUpdate({ name, text })}
+            onChangeText={name =>
+              this.props.employeeUpdate({ prop: "name", name })
+            }
           />
         </CardSection>
 
@@ -21,6 +23,9 @@ class EmployeeCreate extends Component {
             label="phone"
             placeholder="555-555-5555"
             value={this.props.phone}
+            onChangeText={phone =>
+              this.props.employeeUpdate({ prop: "phone", phone })
+            }
           />
         </CardSection>
 
@@ -40,4 +45,4 @@ const mapStateToProps = state => {
   return phone, shift, name;
 };
 
-export default connect(null, { employeeUpdate })(EmployeeCreate);
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);

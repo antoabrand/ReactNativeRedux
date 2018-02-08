@@ -1,4 +1,4 @@
-import { EMPLOYEE_UPDATE } from "./actionConsts";
+import { EMPLOYEE_UPDATE } from "./ActionConsts";
 
 export const employeeUpdate = ({ prop, value }) => {
   return {
