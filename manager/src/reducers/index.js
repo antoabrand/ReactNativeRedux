@@ -3,6 +3,6 @@ import AuthReducer from "./AuthReducer";
 import EmployeeFormReducer from "./EmployeeFormReducer";
 
 export default combineReducers({
-    auth: AuthReducer,
-    employeeForm: EmployeeFormReducer
+  auth: AuthReducer,
+  employeeForm: EmployeeFormReducer
 });
