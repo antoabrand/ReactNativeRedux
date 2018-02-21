@@ -18,5 +18,7 @@ https://stackoverflow.com/questions/32634352/react-native-android-build-failed-s
 ### Could not determine java version from '9.0.4'
 
 brew cask uninstall java
+
 brew tap caskroom/versions
+
 brew cask install java8
