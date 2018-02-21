@@ -22,3 +22,10 @@ brew cask uninstall java
 brew tap caskroom/versions
 
 brew cask install java8
+
+### Change port for server 
+1.react-native/local-cli/server/server.js - default
+
+2.react-native/React/React.xcodeproj/project.pbxproj 
+
+search for port number 8081 
