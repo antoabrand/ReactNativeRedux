@@ -29,3 +29,8 @@ brew cask install java8
 2.react-native/React/React.xcodeproj/project.pbxproj 
 
 search for port number 8081 
+
+### "No bundle url present" error on IOS 
+Run - npm install 
+
+then - execute react-native run-ios again 
