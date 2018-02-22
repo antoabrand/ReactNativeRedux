@@ -31,6 +31,6 @@ brew cask install java8
 search for port number 8081 
 
 ### "No bundle url present" error on IOS 
-Run - npm install 
+npm install 
 
-then - execute react-native run-ios again 
+react-native run-ios 
