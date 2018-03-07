@@ -40,3 +40,10 @@ react-native run-ios
 ## Ignite CLI 
 
 update package.json with "v1.0.0-beta.26" for react navigation - otherwise typeerror thrown on new project
+
+*****************************
+
+## React native configs
+
+$ npm install react-native-config --save
+$ react-native link react-native-config
