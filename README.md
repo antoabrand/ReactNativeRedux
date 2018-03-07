@@ -46,4 +46,5 @@ update package.json with "v1.0.0-beta.26" for react navigation - otherwise typee
 ## React native configs
 
 $ npm install react-native-config --save
+
 $ react-native link react-native-config
