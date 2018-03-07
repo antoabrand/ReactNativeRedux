@@ -7,3 +7,4 @@ export const LOGIN_USER_FAIL = "login_user_fail";
 export const LOGIN_ATTEMPT = "login_attempt";
 export const EMPLOYEE_UPDATE = "employee_update";
 export const CREATE_EMPLOYEE = "create_employee";
+export const EMPLOYEES_FETCH_SUCESS = "employees_fetch_sucess";

@@ -1,4 +1,10 @@
-import { EMPLOYEE_UPDATE, CREATE_EMPLOYEE } from "./ActionConsts";
+import {
+  EMPLOYEE_UPDATE,
+  CREATE_EMPLOYEE,
+  EMPLOYEES_FETCH_SUCESS
+} from "./ActionConsts";
+import firebase from "firebase";
+import { Actions } from "react-native-router-flux";
 
 export const employeeUpdate = ({ prop, value }) => {
   console.log(prop, value);
@@ -8,10 +14,31 @@ export const employeeUpdate = ({ prop, value }) => {
   };
 };
 
-export const createEmployee = ({ name, phone, shift }) => {
-  console.log(name, phone, shift);
-  return {
-    type: CREATE_EMPLOYEE,
-    payload: { name, phone, shift }
+export const employeeCreate = (name, phone, shift) => {
+  const { currentUser } = firebase.auth();
+
+  return dispatch => {
+    firebase
+      .database()
+      .ref(`/users/${currentUser.uid}/employees`)
+      .push({ name, phone, shift })
+      .then(() => {
+        dispatch({
+          type: CREATE_EMPLOYEE
+        });
+      });
+    Actions.employeeList({ type: "reset" });
+  };
+};
+
+export const employeesFetch = () => {
+  const { currentUser } = firebase.auth();
+  return dispatch => {
+    firebase
+      .database()
+      .ref(`/users/${currentUser.uid}/employees`)
+      .on("value", snapshot => {
+        dispatch({ type: EMPLOYEES_FETCH_SUCESS, payload: snapshot.val() });
+      });
   };
 };

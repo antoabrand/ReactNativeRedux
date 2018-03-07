@@ -8,7 +8,8 @@ let albumTitles;
 class AlbumList extends Component {
   //initial state
   state = {
-    albums: []
+    albums: [],
+    someFlag: true,
   };
 
   //componentWillMount <lifecycle method> will execute when this component is rendered 
@@ -28,6 +29,7 @@ class AlbumList extends Component {
     ));
     return albumTitles;
   }
+  
 
   render() {
     return <View>{this.renderAlbums()}</View>;
