@@ -6,25 +6,27 @@ import { API_KEY, ANOTHER_CONFIG, NEW_FEATURE_IS_ENABLED, MAX_ORDER_QTY} from 'r
 class Home extends Component{
 
     static navigationOptions = {
-        title: "Home"
+        title: "Inventory Management"
     }
     
     render(){
 
-        //destructure navigate method 
+        //destructuring navigate and button style
         const {navigate} = this.props.navigation;
         const {button} = styles; 
 
+        //this could be an axios call to appconfig to render the icons we want 
         const components = [
-            {component: "SalesFloorTool", header:"Sales Floor Tool"},
-            {component: "BackRoomTool", header:"Back Room Tool"}
+            {compName: "SalesFloorTool", header:"Sales Floor Tool"},
+            {compName: "BackRoomTool", header:"Back Room Tool"}
         ];
 
+        //this helper will navigate to the component we want based on the the title of the component
         const navHelper = (component,navigate) => {
-            let componentName = component.component;
 
-                return navigate(componentName);
-           
+            const {compName,header} = component;
+
+                return navigate(compName,{header});
         }
 
         return (
@@ -32,8 +34,8 @@ class Home extends Component{
                 {components.map( component => {
                     return (    
                         <Button 
-                            onPress={() => navigate(component.component)}
-                            title={component.title}
+                            onPress={() => navHelper(component,navigate)}
+                            title={component.header}
                             color="#0000ff"/>)
                     })}
             </View>
