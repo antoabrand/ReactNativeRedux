@@ -1,19 +1,19 @@
 import React, {Component} from "react";
 import {TouchableHighlight, View, Text} from "react-native";
 
-class Account extends Component{
+class SalesFloorTool extends Component{
 
     static navigationOptions = {
-        title: "Account"
+        title: "Sales Floor Tool"
     }
 
     render(){
         return(
             <View>
-                <Text>Account Screen</Text>
+                <Text>Sales Floor Tool</Text>
             </View>
         )
     }
 }
 
-export default Account;
+export default SalesFloorTool;

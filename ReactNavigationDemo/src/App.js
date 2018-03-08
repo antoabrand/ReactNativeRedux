@@ -4,15 +4,15 @@ import {StackNavigator} from 'react-navigation';
 
 //importing screens
 import Home from './screens/Home';
-import Chat from './screens/Chat';
-import Account from './screens/Account';
+import SalesFloorTool from './screens/SalesFloorTool';
+import BackRoomTool from './screens/BackRoomTool';
 
 
 const App = StackNavigator({
   //create my routes - this is the config obj that maps keys to components
   Home:{screen: Home},
-  Chat:{screen: Chat},
-  Account:{screen: Account},
+  SalesFloorTool:{screen: SalesFloorTool},
+  BackRoomTool:{screen: BackRoomTool},
 },
   { //set starting point in second argument 
     initialRouteName: 'Home'

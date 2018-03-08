@@ -1,22 +1,22 @@
 import React, {Component} from "react";
 import {TouchableHighlight, View, Text} from "react-native";
 
-class Chat extends Component{
+class BackRoomTool extends Component{
 
     static navigationOptions = {
-        title: "Chat Screen"
+        title: "Back Room Tool"
     }
 
     render(){
         //given to us by the navigator component - used to destructure out the data that's passed
-        const {user} = this.props.navigation.state.params;
+        // const {user} = this.props.navigation.state.params;
 
         return(
             <View>
-                <Text>{"Chatting with"} {user.name} </Text>
+                <Text>{"Back Room Tool"} </Text>
             </View>
         )
     }
 }
 
-export default Chat;
+export default BackRoomTool;
