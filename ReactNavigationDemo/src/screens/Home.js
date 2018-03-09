@@ -32,6 +32,8 @@ class Home extends Component{
         return (
             <View style={button}> 
                 {components.map( component => {
+
+                    <Text></Text>
                     return (    
                         <Button 
                             onPress={() => navHelper(component,navigate)}
