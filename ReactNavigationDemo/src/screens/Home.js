@@ -1,12 +1,18 @@
 import React, {Component} from "react";
-import {Button, View, Text, StyleSheet} from "react-native";
+import {Button, View, Text, StyleSheet, Image} from "react-native";
 import Config from "react-native-config";
 import { API_KEY, ANOTHER_CONFIG, NEW_FEATURE_IS_ENABLED, MAX_ORDER_QTY} from 'react-native-dotenv'
 
 class Home extends Component{
 
     static navigationOptions = {
-        title: "Inventory Management"
+        title: "Inventory Management",
+        headerStyle: {
+            backgroundColor: '#007dc6', 
+          },
+          headerTitleStyle: {
+            color: 'white'
+          },
     }
     
     render(){
@@ -32,13 +38,15 @@ class Home extends Component{
         return (
             <View style={button}> 
                 {components.map( component => {
-
-                    <Text></Text>
-                    return (    
+             
+                    return ( 
+                        <View>
+                        <Image source={require("../imgs/somePic.png")}/>
                         <Button 
                             onPress={() => navHelper(component,navigate)}
                             title={component.header}
-                            color="#0000ff"/>)
+                            color="#0000ff"/>
+                            </View>)
                     })}
             </View>
         )

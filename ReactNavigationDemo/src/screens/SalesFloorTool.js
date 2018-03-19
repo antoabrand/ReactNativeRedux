@@ -5,7 +5,13 @@ class SalesFloorTool extends Component{
 
     //meanwhile using this - will use our own header eventually 
     static navigationOptions = {
-        title: "Sales Floor Tool"
+        title: "Sales Floor Tool",
+        headerStyle: {
+            backgroundColor: '#007dc6', 
+          },
+          headerTitleStyle: {
+            color: 'white'
+          },
     }
    
     render(){

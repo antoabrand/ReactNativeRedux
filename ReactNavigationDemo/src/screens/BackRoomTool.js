@@ -5,7 +5,13 @@ class BackRoomTool extends Component{
 
     //don't want to hardcode this - instead would like to inject our own header component
     static navigationOptions = {
-        title: "Back Room Tool"
+        title: "Back Room Tool",
+        headerStyle: {
+            backgroundColor: '#007dc6', 
+          },
+          headerTitleStyle: {
+            color: 'white'
+          },
     }
 
     render(){

@@ -11,8 +11,8 @@ import BackRoomTool from './screens/BackRoomTool';
 const App = StackNavigator({
   //create my routes - this is the config obj that maps keys to components
   Home:{screen: Home},
-  SalesFloorTool:{screen: SalesFloorTool},
-  BackRoomTool:{screen: BackRoomTool},
+  SalesFloorTool:{screen: SalesFloorTool, path: 'imsSFTool/:id'},
+  BackRoomTool:{screen: BackRoomTool}
 },
   { //set starting point in second argument 
     initialRouteName: 'Home'
